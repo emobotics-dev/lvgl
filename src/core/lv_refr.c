@@ -51,9 +51,6 @@ typedef struct {
 /**********************
  *  STATIC PROTOTYPES
  **********************/
-static void lv_refr_join_area(void);
-static void refr_invalid_areas(void);
-static void refr_sync_areas(void);
 static void refr_area(const lv_area_t * area_p);
 static void refr_area_part(lv_draw_ctx_t * draw_ctx);
 static lv_obj_t * lv_refr_get_top_obj(const lv_area_t * area_p, lv_obj_t * obj);
@@ -473,7 +470,7 @@ uint32_t lv_refr_get_fps_avg(void)
 /**
  * Join the areas which has got common parts
  */
-static void lv_refr_join_area(void)
+void lv_refr_join_area(void)
 {
     uint32_t join_from;
     uint32_t join_in;
@@ -510,7 +507,7 @@ static void lv_refr_join_area(void)
 /**
  * Refresh the sync areas
  */
-static void refr_sync_areas(void)
+void refr_sync_areas(void)
 {
     /*Do not sync if not direct mode*/
     if(!disp_refr->driver->direct_mode) return;
@@ -582,7 +579,7 @@ static void refr_sync_areas(void)
 /**
  * Refresh the joined areas
  */
-static void refr_invalid_areas(void)
+void refr_invalid_areas(void)
 {
     px_num = 0;
 

@@ -41,6 +41,10 @@ extern "C" {
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
+void lv_refr_join_area(void);
+void refr_sync_areas(void);
+void refr_invalid_areas(void);
+
 
 /**
  * Initialize the screen refresh subsystem
