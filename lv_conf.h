@@ -321,13 +321,13 @@
 #define LV_BIG_ENDIAN_SYSTEM 0
 
 /*Define a custom attribute to `lv_tick_inc` function*/
-#define LV_ATTRIBUTE_TICK_INC
+#define LV_ATTRIBUTE_TICK_INC  __attribute__((section(".iram1")))
 
 /*Define a custom attribute to `lv_timer_handler` function*/
-#define LV_ATTRIBUTE_TIMER_HANDLER
+#define LV_ATTRIBUTE_TIMER_HANDLER  __attribute__((section(".iram1")))
 
 /*Define a custom attribute to `lv_disp_flush_ready` function*/
-#define LV_ATTRIBUTE_FLUSH_READY
+#define LV_ATTRIBUTE_FLUSH_READY  __attribute__((section(".iram1")))
 
 /*Required alignment size for buffers*/
 #define LV_ATTRIBUTE_MEM_ALIGN_SIZE 4
